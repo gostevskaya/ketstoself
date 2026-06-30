@@ -1,0 +1,15 @@
+{
+  "name": "Ключі до себе",
+  "short_name": "Ключі до себе",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f3eadf",
+  "theme_color": "#6f7252",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
