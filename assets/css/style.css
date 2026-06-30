@@ -54,12 +54,12 @@ button,input,select{font:inherit}
 .intro-grid{display:grid;grid-template-columns:1.35fr repeat(4,1fr)}
 .intro-copy,.benefit{padding:22px 20px;min-height:178px}
 .intro-copy{padding-left:24px}
-.intro-copy h2{margin:0 0 12px;font-size:29px;font-weight:400;line-height:1.15}
-.intro-copy p{margin:0;color:var(--muted)}
+.intro-copy h2{margin:0 0 9px;font-size:26px;font-weight:500;line-height:1.08}
+.intro-copy p{margin:0;color:var(--muted);font-size:13px;line-height:1.48}
 .benefit{text-align:center;border-left:1px solid var(--line)}
-.benefit svg{width:46px;height:46px;stroke:var(--gold);margin:0 auto 12px}
-.benefit h3{margin:0 0 6px;font-size:18px;font-weight:400}
-.benefit p{margin:0;color:var(--muted);font-size:14px}
+.benefit svg{width:39px;height:39px;stroke:var(--gold);margin:0 auto 9px}
+.benefit h3{margin:0 0 5px;font-size:18px;font-weight:500}
+.benefit p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
 .cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 
 .card{display:flex;flex-direction:column;overflow:hidden;background:var(--panel-strong);border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 7px rgba(62,45,27,.06);transition:transform .2s ease,box-shadow .2s ease}
