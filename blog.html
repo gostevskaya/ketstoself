@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дневник психолога — Ключи к себе</title>
+<meta name="description" content="Психологическая поддержка и работа с метафорическими ассоциативными картами.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="logo" href="index.html" aria-label="На главную">
+      <svg viewBox="0 0 64 64" fill="none" stroke-width="3">
+        <circle cx="21" cy="20" r="8"/><circle cx="37" cy="20" r="8"/>
+        <circle cx="29" cy="11" r="8"/><path d="M29 28v25M29 40h13M42 40v7M42 47h7"/>
+      </svg>
+      <span>Ключи к себе</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Главная</a>
+      <a href="blog.html">Дневник психолога</a>
+      <a href="about.html">О себе</a>
+      <a href="mak.html">Работа с МАК</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+    <a class="header-phone" data-phone-link href="tel:+380754507590">☎ <span data-phone>+38 075 45 075 90</span></a>
+    <button class="mobile-toggle" aria-label="Открыть меню">☰</button>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-hero"><div class="container"><h1>Дневник психолога</h1><p>Статьи о самопознании, эмоциях, отношениях и работе с метафорическими картами.</p></div></section>
+  <section class="section">
+    <div class="container">
+      <div class="blog-controls">
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">Все статьи</button>
+          <button class="filter-btn" data-filter="mak">МАК</button>
+          <button class="filter-btn" data-filter="self">Самопознание</button>
+          <button class="filter-btn" data-filter="psychology">Психология</button>
+        </div>
+        <select class="sort-select" id="sortArticles" aria-label="Сортировка статей">
+          <option value="newest">Сначала последние</option>
+          <option value="oldest">Сначала старые</option>
+        </select>
+      </div>
+
+      <div class="blog-grid">
+        <article class="card blog-card" data-category="mak" data-date="2026-06-30">
+          <img src="assets/images/blog-mak.jpg" alt="Метафорические карты">
+          <div class="card-body">
+            <div class="article-date">30 июня 2026</div>
+            <div class="meta">МАК</div>
+            <h3>Что такое МАК?</h3>
+            <p>Как изображения помогают лучше понимать себя и свои эмоции.</p>
+            <a class="btn btn-small" href="article-mak.html">Читать далее</a>
+          </div>
+        </article>
+        <article class="card blog-card" data-category="self" data-date="2026-06-21">
+          <img src="assets/images/blog-questions.jpg" alt="Вопросы к себе">
+          <div class="card-body">
+            <div class="article-date">21 июня 2026</div>
+            <div class="meta">Самопознание</div>
+            <h3>Вопросы к себе</h3>
+            <p>Практики осознанности и маленькие шаги к изменениям.</p>
+            <a class="btn btn-small" href="article-questions.html">Читать далее</a>
+          </div>
+        </article>
+        <article class="card blog-card" data-category="psychology" data-date="2026-06-12">
+          <img src="assets/images/blog-daily.jpg" alt="Психология каждый день">
+          <div class="card-body">
+            <div class="article-date">12 июня 2026</div>
+            <div class="meta">Психология</div>
+            <h3>Психология каждый день</h3>
+            <p>Как замечать свои состояния и заботиться о внутреннем мире.</p>
+            <a class="btn btn-small" href="article-daily.html">Читать далее</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<section class="contact-band" id="contacts">
+  <div class="container contact-row">
+    <h2>Связаться со мной</h2>
+    <a class="phone-big" data-phone-link href="tel:+380754507590">☎ <span data-phone>+38 075 45 075 90</span></a>
+    <a class="social-btn telegram" data-telegram href="https://t.me/your_username" target="_blank" rel="noopener">✈ Написать в Telegram</a>
+    <a class="social-btn viber" data-viber href="viber://chat?number=%2B380754507590">✆ Написать в Viber</a>
+  </div>
+</section>
+<footer class="site-footer">© 2026 Ключи к себе. Все права защищены.</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
