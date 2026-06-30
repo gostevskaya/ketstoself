@@ -1,53 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--	created with www.mysitemapgenerator.com -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://keystoself.com.ua/</loc>
-<lastmod>2026-06-30T14:07:33+01:00</lastmod>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://keystoself.com.ua/</loc>
+    <lastmod>2026-06-30</lastmod>
+  </url>
 
-<url>
-<loc>https://keystoself.com.ua/index.html</loc>
-<lastmod>2026-06-30T14:07:33+01:00</lastmod>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://keystoself.com.ua/about.html</loc>
+    <lastmod>2026-06-30</lastmod>
+  </url>
 
-<url>
-<loc>https://keystoself.com.ua/about.html</loc>
-<lastmod>2026-06-30T14:07:33+01:00</lastmod>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://keystoself.com.ua/mak.html</loc>
+    <lastmod>2026-06-30</lastmod>
+  </url>
 
-<url>
-<loc>https://keystoself.com.ua/mak.html</loc>
-<lastmod>2026-06-30T14:07:33+01:00</lastmod>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://keystoself.com.ua/blog.html</loc>
+    <lastmod>2026-06-30</lastmod>
+  </url>
 
-<url>
-<loc>https://keystoself.com.ua/blog.html</loc>
-<lastmod>2026-06-30T14:07:33+01:00</lastmod>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://keystoself.com.ua/article-mak.html</loc>
+    <lastmod>2026-06-30</lastmod>
+  </url>
 
-<url>
-<loc>https://keystoself.com.ua/article-mak.html</loc>
-<lastmod>2026-06-30T14:07:33+01:00</lastmod>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://keystoself.com.ua/article-questions.html</loc>
+    <lastmod>2026-06-30</lastmod>
+  </url>
 
-<url>
-<loc>https://keystoself.com.ua/article-questions.html</loc>
-<lastmod>2026-06-30T14:07:33+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-
-<url>
-<loc>https://keystoself.com.ua/article-daily.html</loc>
-<lastmod>2026-06-30T14:07:33+01:00</lastmod>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://keystoself.com.ua/article-daily.html</loc>
+    <lastmod>2026-06-30</lastmod>
+  </url>
 
 </urlset>
