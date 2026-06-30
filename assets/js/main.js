@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-phone]").forEach(el => el.textContent = cfg.phoneDisplay || "");
   document.querySelectorAll("[data-phone-link]").forEach(el => el.href = "tel:" + (cfg.phoneLink || ""));
   document.querySelectorAll("[data-telegram]").forEach(el => el.href = cfg.telegram || "#");
+  document.querySelectorAll("[data-telegram-channel]").forEach(el => el.href = cfg.telegramChannel || "#");
   document.querySelectorAll("[data-viber]").forEach(el => el.href = cfg.viber || "#");
 
   const toggle = document.querySelector(".mobile-toggle");
