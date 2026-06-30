@@ -59,34 +59,38 @@ button,input,select{font:inherit}
 .benefit h3{margin:0 0 6px;font-size:18px;font-weight:400}
 .benefit p{margin:0;color:var(--muted);font-size:14px}
 .cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+
 .card{display:flex;flex-direction:column;overflow:hidden;background:var(--panel-strong);border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 7px rgba(62,45,27,.06);transition:transform .2s ease,box-shadow .2s ease}
+
 .card:hover{transform:translateY(-2px);box-shadow:0 5px 13px rgba(62,45,27,.10)}
+
 .card img{display:block;width:100%;aspect-ratio:2/1;height:auto;object-fit:cover;object-position:center}
+
 .card-body{display:flex;flex-direction:column;flex-grow:1;padding:14px 18px 16px}
+
 .card h3{margin:0 0 6px;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:500;line-height:1.08;color:var(--ink)}
+
 .card p{flex-grow:1;margin:0 0 13px;font-size:13px;line-height:1.45;color:var(--muted)}
- 
-.meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.article-date{font-size:13px;color:var(--gold);margin-bottom:8px}
 
 @media (max-width:900px){
   .cards-3{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
 @media (max-width:620px){
-  .cards-3{
-    grid-template-columns:1fr;
-    gap:18px;
-  }
-
-  .card img{
-    aspect-ratio:2/1;
-  }
-
-  .card-body{
-    padding:14px 16px 16px;
-  }
+  .cards-3{grid-template-columns:1fr;gap:18px}
+  .card img{aspect-ratio:2/1}
+  .card-body{padding:14px 16px 16px}
 }
+
+
+
+ 
+.meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.article-date{font-size:13px;color:var(--gold);margin-bottom:8px}
+
+
+  
+  
 .home-split{display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
 .panel{background:var(--panel-strong);border:1px solid var(--line-strong);border-radius:22px;box-shadow:var(--shadow-soft);padding:34px;min-height:390px}
 .about-panel{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center}
