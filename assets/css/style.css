@@ -74,6 +74,10 @@ button,input,select{font:inherit}
 
 .card p{flex-grow:1;margin:0 0 13px;font-size:13px;line-height:1.45;color:var(--muted)}
 
+.panel{padding:24px;min-height:315px}
+.panel h2{margin:0 0 10px;font-size:32px;font-weight:500;line-height:1.05}
+.profile-round{width:165px;height:210px}
+
 @media (max-width:900px){
   .cards-3{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
