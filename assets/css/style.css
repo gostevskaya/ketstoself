@@ -208,9 +208,10 @@ h1, h2, h3 { color: var(--ink); }
   min-height: 520px;
   display: flex;
   align-items: center;
+  position: relative;
   color: #fff8ec;
   background-color: #4b301d;
-  background-image: linear-gradient(90deg, rgba(48, 30, 18, .86) 0%, rgba(48, 30, 18, .66) 34%, rgba(48, 30, 18, .23) 64%, rgba(48, 30, 18, .03) 88%), url("../images/hero.jpg");
+  background-image: url("../images/hero-home.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -233,6 +234,42 @@ h1, h2, h3 { color: var(--ink); }
   font-size: 24px;
   font-weight: 500;
   line-height: 1.25;
+}
+
+
+/* The desktop hero artwork already contains its heading and subtitle.
+   Keep semantic text in the page for search engines and screen readers,
+   while avoiding a visible duplicate over the image. */
+.hero-content > .btn {
+  background: var(--olive);
+  border: 1px solid var(--olive);
+  color: #fff;
+}
+
+@media (min-width: 901px) {
+  .hero-content { position: static; max-width: none; padding: 0; }
+  .hero .eyebrow,
+  .hero h1,
+  .hero p {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .hero .btn {
+    position: absolute;
+    left: 10vw;
+    bottom: 42px;
+    z-index: 2;
+    background: var(--olive);
+    border: 1px solid var(--olive);
+    color: #fff;
+  }
 }
 
 /* Feature strip */
@@ -454,6 +491,10 @@ h1, h2, h3 { color: var(--ink); }
 }
 
 @media (max-width: 900px) {
+  .hero {
+    background-image: linear-gradient(90deg, rgba(48, 30, 18, .90) 0%, rgba(48, 30, 18, .70) 56%, rgba(48, 30, 18, .35) 100%), url("../images/hero-home-mobile.jpg");
+    background-position: center;
+  }
   .header-row { grid-template-columns: auto 1fr auto; min-height: 70px; }
   .logo-name { font-size: 29px; }
   .main-nav {
@@ -490,7 +531,11 @@ h1, h2, h3 { color: var(--ink); }
   .logo-mark { width: 31px; height: 31px; }
   .logo-name { font-size: 27px; }
   .main-nav { top: 68px; }
-  .hero { min-height: 555px; background-position: 63% center; }
+  .hero {
+    min-height: 555px;
+    background-image: linear-gradient(90deg, rgba(48, 30, 18, .88) 0%, rgba(48, 30, 18, .68) 58%, rgba(48, 30, 18, .34) 100%), url("../images/hero-home-mobile.jpg");
+    background-position: center;
+  }
   .hero-content { padding: 72px 0; }
   .hero h1 { font-size: 68px; }
   .hero p { max-width: 92%; font-size: 20px; }
