@@ -205,14 +205,14 @@ h1, h2, h3 { color: var(--ink); }
 
 /* Hero */
 .hero {
-  min-height: 520px;
+  min-height: 580px;
   display: flex;
   align-items: center;
   position: relative;
   color: #fff8ec;
   background-color: #4b301d;
-  background-image: url("../images/hero-home.jpg");
-  background-position: center;
+  background-image: url("../images/hero-home-v2.jpg");
+  background-position: center 56%;
   background-size: cover;
 }
 .hero-content { max-width: 560px; padding: 70px 0 74px; }
@@ -492,8 +492,8 @@ h1, h2, h3 { color: var(--ink); }
 
 @media (max-width: 900px) {
   .hero {
-    background-image: linear-gradient(90deg, rgba(48, 30, 18, .90) 0%, rgba(48, 30, 18, .70) 56%, rgba(48, 30, 18, .35) 100%), url("../images/hero-home-mobile.jpg");
-    background-position: center;
+    background-image: linear-gradient(90deg, rgba(48, 30, 18, .90) 0%, rgba(48, 30, 18, .70) 56%, rgba(48, 30, 18, .35) 100%), url("../images/hero-home-mobile-v2.jpg");
+    background-position: center 52%;
   }
   .header-row { grid-template-columns: auto 1fr auto; min-height: 70px; }
   .logo-name { font-size: 29px; }
@@ -532,9 +532,9 @@ h1, h2, h3 { color: var(--ink); }
   .logo-name { font-size: 27px; }
   .main-nav { top: 68px; }
   .hero {
-    min-height: 555px;
-    background-image: linear-gradient(90deg, rgba(48, 30, 18, .88) 0%, rgba(48, 30, 18, .68) 58%, rgba(48, 30, 18, .34) 100%), url("../images/hero-home-mobile.jpg");
-    background-position: center;
+    min-height: 585px;
+    background-image: linear-gradient(90deg, rgba(48, 30, 18, .88) 0%, rgba(48, 30, 18, .68) 58%, rgba(48, 30, 18, .34) 100%), url("../images/hero-home-mobile-v2.jpg");
+    background-position: center 50%;
   }
   .hero-content { padding: 72px 0; }
   .hero h1 { font-size: 68px; }
@@ -596,4 +596,27 @@ h1, h2, h3 { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
+}
+
+/* Final navigation and hero refinements — 2026-07-01 */
+@media (min-width: 901px) {
+  .main-nav { gap: clamp(20px, 2.1vw, 32px); }
+  .main-nav a { font-size: 14px; font-weight: 500; letter-spacing: .01em; }
+  .hero { min-height: 580px; background-position: center top; }
+  .hero .btn { bottom: 18px; }
+}
+
+.online-format {
+  margin: 34px 0 32px;
+  padding: 26px 28px 22px;
+  background: rgba(244, 237, 225, .72);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.online-format .content-heading { margin-top: 0; }
+.online-format p:last-child { margin-bottom: 0; }
+
+@media (max-width: 680px) {
+  .online-format { padding: 22px 20px 18px; }
 }
