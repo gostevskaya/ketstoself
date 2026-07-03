@@ -52,16 +52,16 @@ button, input, select { font: inherit; }
 .site-main::after {
   content: "";
   position: absolute;
-  z-index: -1;
-  top: 36%;
-  width: 64px;
-  height: 300px;
+  z-index: 4;
+  top: 28%;
+  width: 84px;
+  height: 380px;
   background: url("../images/side-vine.svg") center / contain no-repeat;
-  opacity: .2;
+  opacity: .28;
   pointer-events: none;
 }
-.site-main::before { left: -15px; }
-.site-main::after { right: -15px; transform: scaleX(-1); }
+.site-main::before { left: 0; }
+.site-main::after { right: 0; transform: scaleX(-1); }
 
 /* Header */
 .site-header {
@@ -187,7 +187,7 @@ button, input, select { font: inherit; }
 }
 .hero-action {
   position: absolute;
-  left: 50%;
+  left: 27%;
   bottom: 18px;
   z-index: 3;
   display: flex;
@@ -199,7 +199,7 @@ button, input, select { font: inherit; }
 }
 .site-banner {
   width: 100%;
-  height: 150px;
+  height: clamp(190px, 17vw, 240px);
   overflow: hidden;
 }
 .site-banner img {
@@ -264,18 +264,22 @@ h1, h2, h3 { color: var(--ink); }
 .page-script-title::before,
 .page-script-title::after {
   content: "";
-  width: 74px;
-  height: 27px;
-  flex: 0 0 74px;
+  width: 54px;
+  height: 22px;
+  flex: 0 0 54px;
   background: url("../images/title-branch.svg") center / contain no-repeat;
-  opacity: .92;
+  opacity: .82;
 }
 .section-title::after,
 .ornament-title::after,
 .decorated-title::after,
 .page-script-title::after { transform: scaleX(-1); }
 .decorated-title::before,
-.decorated-title::after { width: 36px; flex-basis: 36px; height: 20px; }
+.decorated-title::after {
+  width: 42px;
+  height: 18px;
+  flex-basis: 42px;
+}
 .btn {
   display: inline-flex;
   align-items: center;
@@ -572,6 +576,13 @@ h1, h2, h3 { color: var(--ink); }
 }
 
 @media (max-width: 680px) {
+  .site-main::before,
+  .site-main::after {
+    width: 46px;
+    height: 250px;
+    opacity: .16;
+  }
+
   .container { width: min(var(--max), calc(100% - 24px)); }
   body { font-size: 13px; }
   .site-main::before,
@@ -675,7 +686,7 @@ h1, h2, h3 { color: var(--ink); }
   }
 
   .site-banner {
-    height: 92px;
+    height: 130px;
   }
 
   .site-banner img,
