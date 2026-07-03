@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Marck+Script&family=Montserrat:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Marck+Script&family=Montserrat:wght@400;500;600&family=Pattaya&display=swap");
 
 :root {
   --bg: #f3eadf;
@@ -239,7 +239,7 @@ h1, h2, h3 { color: var(--ink); }
 .script-title,
 .page-script-title,
 .decorated-title {
-  font-family: "Marck Script", cursive;
+  font-family: "Pattaya", "Marck Script", cursive;
   font-weight: 400;
   letter-spacing: 0;
 }
@@ -580,7 +580,14 @@ h1, h2, h3 { color: var(--ink); }
   .logo-mark { width: 28px; height: 28px; }
   .logo-name { font-size: 24px; }
   .main-nav { top: 58px; }
-  .hero-action { padding: 8px 12px 9px; }
+  .hero-action {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    z-index: 3;
+    padding: 0;
+    transform: translateX(-50%);
+  }
   .hero-action .btn { min-height: 35px; padding: 6px 16px; font-size: 11px; }
   .section { padding: 32px 0; }
   .section-title,
@@ -643,59 +650,43 @@ h1, h2, h3 { color: var(--ink); }
 
 @media (max-width: 680px) {
   .hero-visual img {
-    height: min(125vw, 560px);
-    object-fit: cover;
-    object-position: center;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0 0 44px;
-    pointer-events: none;
-    background: linear-gradient(90deg, rgba(45, 25, 12, .82) 0%, rgba(45, 25, 12, .55) 44%, rgba(45, 25, 12, .08) 78%);
-  }
-  .hero-copy {
-    position: absolute !important;
-    z-index: 2;
-    top: clamp(150px, 43vw, 185px);
-    left: 22px;
-    width: min(62%, 255px) !important;
-    height: auto !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: visible !important;
-    clip: auto !important;
-    white-space: normal !important;
-    border: 0 !important;
-    color: #fffaf1;
-  }
-  .hero-copy h1 {
-    margin: 0 0 18px;
-    color: #fffaf1;
-    font-family: "Marck Script", cursive;
-    font-size: clamp(48px, 14vw, 68px);
-    font-weight: 400;
-    line-height: .76;
-    text-shadow: 0 2px 12px rgba(30, 16, 8, .35);
-  }
-  .hero-copy h1 span {
     display: block;
-    margin-top: 16px;
-    color: #c2c99b;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center top;
   }
-  .hero-copy p {
-    margin: 0;
-    color: #fffaf1;
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 18px;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(30, 16, 8, .45);
+
+  .hero::after {
+    display: none;
   }
+
+  .hero-copy {
+    display: none !important;
+  }
+
+  .hero-action {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    z-index: 3;
+    padding: 0;
+    transform: translateX(-50%);
+  }
+
+  .site-banner {
+    height: 92px;
+  }
+
+  .site-banner img,
   .site-banner-visual img {
-    height: 145px;
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center center;
   }
+
   .section { padding: 27px 0; }
   .page-hero { padding: 17px 0 15px; }
   .contact-band { padding: 16px 0 18px; }
