@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Marck+Script&family=Montserrat:wght@400;500;600&family=Pattaya&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Marck+Script&family=Montserrat:wght@400;500;600&display=swap");
 
 :root {
   --bg: #f3eadf;
@@ -239,7 +239,7 @@ h1, h2, h3 { color: var(--ink); }
 .script-title,
 .page-script-title,
 .decorated-title {
-  font-family: "Pattaya", "Marck Script", cursive;
+  font-family: "Marck Script", cursive;
   font-weight: 400;
   letter-spacing: 0;
 }
@@ -543,7 +543,7 @@ h1, h2, h3 { color: var(--ink); }
 }
 
 @media (max-width: 900px) {
-  .header-row { grid-template-columns: auto 1fr auto; min-height: 62px; }
+  .header-row { grid-template-columns: auto 1fr auto auto; gap: 10px; min-height: 62px; }
   .main-nav {
     display: none;
     position: absolute;
@@ -561,7 +561,13 @@ h1, h2, h3 { color: var(--ink); }
   .main-nav.open { display: flex; }
   .main-nav a { padding: 10px 0; font-size: 13px; }
   .main-nav a::after { bottom: 5px; }
-  .header-phone { display: none; }
+  .header-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    justify-self: end;
+  }
   .mobile-toggle { display: block; }
   .cards-3,
   .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -587,9 +593,27 @@ h1, h2, h3 { color: var(--ink); }
   body { font-size: 13px; }
   .site-main::before,
   .site-main::after { width: 38px; height: 220px; opacity: .13; }
-  .header-row { min-height: 58px; }
+  .header-row {
+    grid-template-columns: auto 1fr auto auto;
+    gap: 6px;
+    min-height: 58px;
+  }
   .logo-mark { width: 28px; height: 28px; }
-  .logo-name { font-size: 24px; }
+  .logo-name { font-size: 21px; }
+  .header-phone {
+    display: inline-flex;
+    gap: 4px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .header-phone img {
+    width: 15px;
+    height: 15px;
+  }
+  .mobile-toggle {
+    width: 38px;
+    height: 38px;
+  }
   .main-nav { top: 58px; }
   .hero-action {
     position: absolute;
@@ -701,6 +725,20 @@ h1, h2, h3 { color: var(--ink); }
   .section { padding: 27px 0; }
   .page-hero { padding: 17px 0 15px; }
   .contact-band { padding: 16px 0 18px; }
+}
+
+@media (max-width: 520px) {
+  .logo-name {
+    display: none;
+  }
+
+  .header-row {
+    grid-template-columns: auto 1fr auto auto;
+  }
+
+  .header-phone {
+    font-size: 13px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
