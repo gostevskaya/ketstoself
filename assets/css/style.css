@@ -168,8 +168,9 @@ button, input, select { font: inherit; }
   line-height: 0;
 }
 .hero-visual img {
+  display: block;
   width: 100%;
-  height: clamp(330px, 33.3vw, 500px);
+  height: auto;
   object-fit: cover;
   object-position: center;
 }
@@ -185,17 +186,28 @@ button, input, select { font: inherit; }
   border: 0 !important;
 }
 .hero-action {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  z-index: 3;
   display: flex;
   justify-content: center;
-  padding: 8px 18px 10px;
-  background: rgba(67, 39, 22, .97);
-  border-top: 1px solid rgba(255, 255, 255, .12);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  transform: translateX(-50%);
 }
-.site-banner-visual img {
+.site-banner {
   width: 100%;
-  height: 210px;
+  height: 150px;
+  overflow: hidden;
+}
+.site-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 }
 .site-banner { padding: 0; }
 
