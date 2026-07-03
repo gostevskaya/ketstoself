@@ -158,8 +158,16 @@ button, input, select { font: inherit; }
 .site-banner {
   position: relative;
   overflow: hidden;
-  background: #4a2c19;
-  border-bottom: 1px solid rgba(159, 139, 96, .42);
+  background: transparent;
+  border-bottom: 0;
+}
+
+.hero {
+  line-height: 0;
+}
+
+.hero-action {
+  line-height: normal;
 }
 .hero-visual,
 .site-banner-visual {
