@@ -572,6 +572,10 @@ h1, h2, h3 { color: var(--ink); }
   .home-split { grid-template-columns: 1fr; }
 }
 
+
+@media (max-width: 1160px) {
+  .deck-gallery-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
 @media (max-width: 900px) {
   .header-row { grid-template-columns: auto 1fr auto auto; gap: 10px; min-height: 62px; }
   .main-nav {
@@ -939,6 +943,10 @@ h1, h2, h3 { color: var(--ink); }
   background: var(--olive-dark);
   color: #fff;
 }
+
+@media (max-width: 1160px) {
+  .deck-gallery-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
 @media (max-width: 900px) {
   .deck-choice-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1005,7 +1013,7 @@ body, p, li, .deck-choice-intro p, .cards-hero p, .deck-choice-card p { color: #
 .deck-closed-card p { color: #4b4037; font-size: 19px; line-height: 1.45; }
 .deck-open-intro { max-width: 820px; margin: 0 auto 22px; text-align: center; color: #4b4037; font-family: "Cormorant Garamond", Georgia, serif; font-size: 21px; line-height: 1.35; }
 .deck-gallery-section { padding-top: 28px; }
-.deck-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 22px 18px; align-items: start; }
+.deck-gallery-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px 24px; align-items: start; }
 .deck-gallery-item { margin: 0; text-align: center; }
 .deck-gallery-item a { display: block; text-decoration: none; color: inherit; }
 .deck-card-number { display: block; margin-bottom: 6px; color: #4b3527; font-family: "Cormorant Garamond", Georgia, serif; font-size: 25px; font-weight: 700; line-height: 1; }
@@ -1015,18 +1023,22 @@ body, p, li, .deck-choice-intro p, .cards-hero p, .deck-choice-card p { color: #
 .home-deck-panel { text-align: center; }
 .home-deck-preview { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; max-width: 760px; margin: 18px auto 24px; }
 .home-deck-preview img { aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+
+@media (max-width: 1160px) {
+  .deck-gallery-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
 @media (max-width: 900px) {
   .header-row { grid-template-columns: auto 1fr auto auto auto; }
   .mobile-cards-link { display: inline-flex; justify-self: end; }
   .main-nav a { font-size: 14px; }
   .header-phone { font-size: 18px; }
-  .deck-gallery-grid { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 18px 14px; }
+  .deck-gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 16px; }
 }
 @media (max-width: 680px) {
   .header-row { grid-template-columns: auto 1fr auto auto auto; }
   .mobile-cards-link { min-height: 31px; padding: 6px 10px; font-size: 12px; }
   .header-phone { font-size: 16px; }
-  .deck-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
+  .deck-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
   .deck-card-number { font-size: 23px; }
 }
 @media (max-width: 420px) {
@@ -1053,82 +1065,24 @@ body, p, li, .deck-choice-intro p, .cards-hero p, .deck-choice-card p { color: #
   }
 }
 
-
-/* Patch: deck status frame and 6-column gallery */
-.deck-closed-card,
-.deck-open-card {
-  max-width: 980px;
-  margin: 20px auto 0;
-  padding: 28px 34px 30px;
-  border: 1px solid var(--olive);
-  border-radius: 24px;
-  background: rgba(251, 247, 239, 0.96);
+/* Deck status frame: open/closed */
+.deck-status-card {
+  max-width: 820px;
+  margin: 18px auto 0;
+  padding: 24px 28px;
+  border: 1px solid var(--line-strong);
+  border-radius: 22px;
+  background: rgba(251,247,239,.92);
   box-shadow: var(--shadow-soft);
   text-align: center;
 }
-.deck-open-card p,
-.deck-closed-card p {
-  max-width: 820px;
-  margin: 0 auto 22px;
+.deck-status-card p {
+  margin: 0 auto 18px;
   color: #4b4037;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
-  line-height: 1.42;
+  font-size: 19px;
+  line-height: 1.5;
 }
-.deck-open-card .deck-page-back,
-.deck-closed-card .deck-page-back {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 210px;
-  min-height: 46px;
-  padding: 12px 24px;
-  font-size: 16px;
-}
-.deck-gallery-section { padding-top: 34px; }
-.deck-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 34px 28px;
-  align-items: start;
-}
-.deck-gallery-item { margin: 0; text-align: center; }
-.deck-gallery-item a { display: block; text-decoration: none; color: inherit; }
-.deck-card-number {
-  display: block;
-  margin-bottom: 9px;
-  color: #4b3527;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1;
-}
-.deck-card-frame {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  padding: 8px;
-  border: 1px solid var(--line-strong);
-  border-radius: 16px;
-  background: rgba(251,247,239,.98);
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-}
-.deck-card-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-@media (max-width: 1100px) {
-  .deck-gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 22px; }
-}
-@media (max-width: 680px) {
-  .deck-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 16px; }
-  .deck-open-card, .deck-closed-card { padding: 22px 18px 24px; }
-  .deck-open-card p, .deck-closed-card p { font-size: 19px; }
+.deck-status-card .deck-page-back {
+  font-size: 14px;
+  padding: 10px 22px;
 }
