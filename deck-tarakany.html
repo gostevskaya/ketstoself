@@ -58,9 +58,9 @@
 <p>Колода зараз закрита для перегляду. Олена відкриє її на час сесії, якщо ви оберете саме цю колоду.</p>
 <a class="deck-page-back" href="cards.html">← До вибору колод</a>
 </div>
-<div data-deck-open hidden>
-<p class="deck-open-intro">Галерея цієї колоди буде додана після узгодження назв файлів карт.</p>
-<p><a class="deck-page-back" href="cards.html">← До вибору колод</a></p>
+<div class="deck-open-card" data-deck-open hidden>
+<p>Галерея цієї колоди буде додана після узгодження назв файлів карт.</p>
+<a class="deck-page-back" href="cards.html">← До вибору колод</a>
 </div>
 </div>
 </section>
@@ -99,6 +99,7 @@
   var open = !!window.deckAccess[key];
   var closedBlock = document.querySelector('[data-deck-closed]');
   var openBlocks = document.querySelectorAll('[data-deck-open]');
+  if (closedBlock) closedBlock.hidden = open;
   openBlocks.forEach(function(block){ block.hidden = !open; });
 })();
 </script>
