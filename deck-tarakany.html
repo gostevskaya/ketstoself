@@ -5,20 +5,20 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Таракани в голові | «Ключі до себе»</title>
-<meta content="Сторінка колоди В пошуках сенсу готується." name="description"/>
+<meta content="Галерея колоди Таракани в голові для роботи з метафоричними картами." name="description"/>
 <meta content="МАК колоди, метафоричні карти онлайн, вибір колоди, Ключі до себе" name="keywords"/>
 <meta content="Олена — Ключі до себе" name="author"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="#6f7352" name="theme-color"/>
-<link href="https://keystoself.com.ua/cards.html" rel="canonical"/>
+<link href="https://keystoself.com.ua/deck-tarakany.html" rel="canonical"/>
 <link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="site.webmanifest" rel="manifest"/>
 <meta content="uk_UA" property="og:locale"/>
 <meta content="website" property="og:type"/>
 <meta content="Ключі до себе" property="og:site_name"/>
-<meta content="Вибір колоди МАК | «Ключі до себе»" property="og:title"/>
+<meta content="Таракани в голові | «Ключі до себе»" property="og:title"/>
 <meta content="Оберіть колоду метафоричних карт, яка зараз найбільше відгукується." property="og:description"/>
-<meta content="https://keystoself.com.ua/cards.html" property="og:url"/>
+<meta content="https://keystoself.com.ua/deck-tarakany.html" property="og:url"/>
 <meta content="https://keystoself.com.ua/assets/images/mak-cards.jpg" property="og:image"/>
 <meta content="Ключі до себе — психологічна підтримка" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
@@ -26,7 +26,7 @@
 <meta content="Оберіть колоду метафоричних карт, яка зараз найбільше відгукується." name="twitter:description"/>
 <meta content="https://keystoself.com.ua/assets/images/mak-cards.jpg" name="twitter:image"/>
 <meta content="OqQjgjxOYaDfPLeTILCCPl3YAwLQMFYE5xxrJE5mUZg" name="google-site-verification"/>
-<link href="assets/css/style.css?v=20260705-cards-readable-access" rel="stylesheet"/>
+<link href="assets/css/style.css?v=20260705-gallery-readable-2" rel="stylesheet"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://keystoself.com.ua/#website","url":"https://keystoself.com.ua/","name":"Ключі до себе","inLanguage":"uk-UA"},{"@type":"ProfessionalService","@id":"https://keystoself.com.ua/#service","name":"Ключі до себе","url":"https://keystoself.com.ua/","image":"https://keystoself.com.ua/assets/images/profile.jpg","telephone":"+380754507590","description":"Психологічна підтримка та робота з метафоричними асоціативними картами.","areaServed":{"@type":"Country","name":"Україна"},"sameAs":["https://t.me/olena_keystoself","https://t.me/keystoself_channel"],"contactPoint":{"@type":"ContactPoint","telephone":"+380754507590","contactType":"customer support","availableLanguage":["uk","ru"]}},{"@type":"Person","@id":"https://keystoself.com.ua/#olena","name":"Олена","jobTitle":"Фахівець з МАК","image":"https://keystoself.com.ua/assets/images/profile.jpg","telephone":"+380754507590","worksFor":{"@id":"https://keystoself.com.ua/#service"},"sameAs":["https://t.me/olena_keystoself","https://t.me/keystoself_channel"]}]}</script>
 </head>
 <body>
@@ -57,12 +57,24 @@
 <p>Колода зараз закрита для перегляду. Олена відкриє її на час сесії, якщо ви оберете саме цю колоду.</p>
 <a class="deck-page-back" href="cards.html">← До вибору колод</a>
 </div>
-<div data-deck-open hidden>
-<p>Колода відкрита для роботи. Галерея цієї колоди буде додана тут.</p>
-<p><a class="deck-page-back" href="cards.html">← До вибору колод</a></p>
+<div class="deck-open-panel" data-deck-open hidden>
+<p class="deck-open-note">Колода відкрита для роботи. Подивіться карти та назвіть номери, які найбільше відгукуються.</p>
+<a class="deck-page-back" href="cards.html">← До вибору колод</a>
 </div>
 </div>
 </section>
+<section class="section deck-gallery-section" data-deck-open hidden>
+<div class="container">
+<div class="deck-gallery-grid" id="deckGallery" aria-label="Галерея колоди Таракани в голові"></div>
+</div>
+</section>
+<div class="deck-modal" id="deckModal" aria-hidden="true">
+  <div class="deck-modal-inner" role="dialog" aria-modal="true" aria-label="Перегляд карти">
+    <button class="deck-modal-close" type="button" aria-label="Закрити">×</button>
+    <p class="deck-modal-title" id="deckModalTitle"></p>
+    <img id="deckModalImg" alt="">
+  </div>
+</div>
 </main>
 <section class="contact-band" id="contacts">
 <div class="container contact-shell">
@@ -89,6 +101,7 @@
 </div>
 </section>
 <footer class="site-footer">© 2026 «Ключі до себе». Усі права захищені.</footer>
+
 <script src="assets/cards/access.js"></script>
 <script>
 (function(){
@@ -96,10 +109,50 @@
   if (!main || !window.deckAccess) return;
   var key = main.getAttribute('data-deck');
   var open = !!window.deckAccess[key];
-  var closedBlock = document.querySelector('[data-deck-closed]');
-  var openBlock = document.querySelector('[data-deck-open]');
-  if (closedBlock) closedBlock.hidden = open;
-  if (openBlock) openBlock.hidden = !open;
+  document.querySelectorAll('[data-deck-closed]').forEach(function(el){ el.hidden = open; });
+  document.querySelectorAll('[data-deck-open]').forEach(function(el){ el.hidden = !open; });
+
+  var gallery = document.getElementById('deckGallery');
+  var files = [
+
+  ];
+  var folder = 'assets/cards/tarakany/';
+  if (open && gallery) {
+    if (!files.length) {
+      gallery.innerHTML = '<p class="deck-open-note">Картки цієї колоди ще не завантажені.</p>';
+    } else {
+      gallery.innerHTML = files.map(function(name, index) {
+        var num = String(index + 1).padStart(3, '0');
+        var src = folder + encodeURIComponent(name).replace(/%2F/g, '/');
+        return '<article class="deck-card-item">'
+          + '<span class="deck-card-number">' + num + '</span>'
+          + '<button type="button" data-src="' + src + '" data-num="' + num + '">'
+          + '<span class="deck-card-frame"><img src="' + src + '" alt="Карта ' + num + '" loading="lazy" draggable="false"></span>'
+          + '</button></article>';
+      }).join('');
+    }
+  }
+  var modal = document.getElementById('deckModal');
+  var modalImg = document.getElementById('deckModalImg');
+  var modalTitle = document.getElementById('deckModalTitle');
+  function closeModal() { if (modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); } }
+  if (gallery) {
+    gallery.addEventListener('click', function(e) {
+      var btn = e.target.closest('button[data-src]');
+      if (!btn || !modal) return;
+      modalImg.src = btn.getAttribute('data-src');
+      modalImg.alt = 'Карта ' + btn.getAttribute('data-num');
+      modalTitle.textContent = btn.getAttribute('data-num');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    });
+  }
+  if (modal) {
+    modal.addEventListener('click', function(e) { if (e.target === modal || e.target.classList.contains('deck-modal-close')) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  }
+  document.addEventListener('contextmenu', function(e) { if (e.target.closest('.deck-gallery-grid, .deck-modal')) e.preventDefault(); });
+  document.addEventListener('dragstart', function(e) { if (e.target.closest('.deck-gallery-grid, .deck-modal')) e.preventDefault(); });
 })();
 </script>
 <script src="assets/js/config.js"></script>

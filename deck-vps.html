@@ -5,20 +5,20 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>В пошуках сенсу | «Ключі до себе»</title>
-<meta content="Сторінка колоди В пошуках сенсу готується." name="description"/>
+<meta content="Галерея колоди В пошуках сенсу для роботи з метафоричними картами." name="description"/>
 <meta content="МАК колоди, метафоричні карти онлайн, вибір колоди, Ключі до себе" name="keywords"/>
 <meta content="Олена — Ключі до себе" name="author"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="#6f7352" name="theme-color"/>
-<link href="https://keystoself.com.ua/cards.html" rel="canonical"/>
+<link href="https://keystoself.com.ua/deck-vps.html" rel="canonical"/>
 <link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="site.webmanifest" rel="manifest"/>
 <meta content="uk_UA" property="og:locale"/>
 <meta content="website" property="og:type"/>
 <meta content="Ключі до себе" property="og:site_name"/>
-<meta content="Вибір колоди МАК | «Ключі до себе»" property="og:title"/>
+<meta content="В пошуках сенсу | «Ключі до себе»" property="og:title"/>
 <meta content="Оберіть колоду метафоричних карт, яка зараз найбільше відгукується." property="og:description"/>
-<meta content="https://keystoself.com.ua/cards.html" property="og:url"/>
+<meta content="https://keystoself.com.ua/deck-vps.html" property="og:url"/>
 <meta content="https://keystoself.com.ua/assets/images/mak-cards.jpg" property="og:image"/>
 <meta content="Ключі до себе — психологічна підтримка" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
@@ -26,7 +26,7 @@
 <meta content="Оберіть колоду метафоричних карт, яка зараз найбільше відгукується." name="twitter:description"/>
 <meta content="https://keystoself.com.ua/assets/images/mak-cards.jpg" name="twitter:image"/>
 <meta content="OqQjgjxOYaDfPLeTILCCPl3YAwLQMFYE5xxrJE5mUZg" name="google-site-verification"/>
-<link href="assets/css/style.css?v=20260705-cards-readable-access" rel="stylesheet"/>
+<link href="assets/css/style.css?v=20260705-gallery-readable-2" rel="stylesheet"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://keystoself.com.ua/#website","url":"https://keystoself.com.ua/","name":"Ключі до себе","inLanguage":"uk-UA"},{"@type":"ProfessionalService","@id":"https://keystoself.com.ua/#service","name":"Ключі до себе","url":"https://keystoself.com.ua/","image":"https://keystoself.com.ua/assets/images/profile.jpg","telephone":"+380754507590","description":"Психологічна підтримка та робота з метафоричними асоціативними картами.","areaServed":{"@type":"Country","name":"Україна"},"sameAs":["https://t.me/olena_keystoself","https://t.me/keystoself_channel"],"contactPoint":{"@type":"ContactPoint","telephone":"+380754507590","contactType":"customer support","availableLanguage":["uk","ru"]}},{"@type":"Person","@id":"https://keystoself.com.ua/#olena","name":"Олена","jobTitle":"Фахівець з МАК","image":"https://keystoself.com.ua/assets/images/profile.jpg","telephone":"+380754507590","worksFor":{"@id":"https://keystoself.com.ua/#service"},"sameAs":["https://t.me/olena_keystoself","https://t.me/keystoself_channel"]}]}</script>
 </head>
 <body>
@@ -57,12 +57,24 @@
 <p>Колода зараз закрита для перегляду. Олена відкриє її на час сесії, якщо ви оберете саме цю колоду.</p>
 <a class="deck-page-back" href="cards.html">← До вибору колод</a>
 </div>
-<div data-deck-open hidden>
-<p>Колода відкрита для роботи. Галерея цієї колоди буде додана тут.</p>
-<p><a class="deck-page-back" href="cards.html">← До вибору колод</a></p>
+<div class="deck-open-panel" data-deck-open hidden>
+<p class="deck-open-note">Колода відкрита для роботи. Подивіться карти та назвіть номери, які найбільше відгукуються.</p>
+<a class="deck-page-back" href="cards.html">← До вибору колод</a>
 </div>
 </div>
 </section>
+<section class="section deck-gallery-section" data-deck-open hidden>
+<div class="container">
+<div class="deck-gallery-grid" id="deckGallery" aria-label="Галерея колоди В пошуках сенсу"></div>
+</div>
+</section>
+<div class="deck-modal" id="deckModal" aria-hidden="true">
+  <div class="deck-modal-inner" role="dialog" aria-modal="true" aria-label="Перегляд карти">
+    <button class="deck-modal-close" type="button" aria-label="Закрити">×</button>
+    <p class="deck-modal-title" id="deckModalTitle"></p>
+    <img id="deckModalImg" alt="">
+  </div>
+</div>
 </main>
 <section class="contact-band" id="contacts">
 <div class="container contact-shell">
@@ -89,6 +101,7 @@
 </div>
 </section>
 <footer class="site-footer">© 2026 «Ключі до себе». Усі права захищені.</footer>
+
 <script src="assets/cards/access.js"></script>
 <script>
 (function(){
@@ -96,10 +109,199 @@
   if (!main || !window.deckAccess) return;
   var key = main.getAttribute('data-deck');
   var open = !!window.deckAccess[key];
-  var closedBlock = document.querySelector('[data-deck-closed]');
-  var openBlock = document.querySelector('[data-deck-open]');
-  if (closedBlock) closedBlock.hidden = open;
-  if (openBlock) openBlock.hidden = !open;
+  document.querySelectorAll('[data-deck-closed]').forEach(function(el){ el.hidden = open; });
+  document.querySelectorAll('[data-deck-open]').forEach(function(el){ el.hidden = !open; });
+
+  var gallery = document.getElementById('deckGallery');
+  var files = [
+"#U0412#U041f#U0421001.jpg",
+"#U0412#U041f#U0421002.jpg",
+"#U0412#U041f#U0421003.jpg",
+"#U0412#U041f#U0421004.jpg",
+"#U0412#U041f#U0421005.jpg",
+"#U0412#U041f#U0421006.jpg",
+"#U0412#U041f#U0421007.jpg",
+"#U0412#U041f#U0421008.jpg",
+"#U0412#U041f#U0421009.jpg",
+"#U0412#U041f#U0421010.jpg",
+"#U0412#U041f#U0421011.jpg",
+"#U0412#U041f#U0421012.jpg",
+"#U0412#U041f#U0421013.jpg",
+"#U0412#U041f#U0421014.jpg",
+"#U0412#U041f#U0421015.jpg",
+"#U0412#U041f#U0421016.jpg",
+"#U0412#U041f#U0421017.jpg",
+"#U0412#U041f#U0421018.jpg",
+"#U0412#U041f#U0421019.jpg",
+"#U0412#U041f#U0421020.jpg",
+"#U0412#U041f#U0421021.jpg",
+"#U0412#U041f#U0421022.jpg",
+"#U0412#U041f#U0421023.jpg",
+"#U0412#U041f#U0421024.jpg",
+"#U0412#U041f#U0421025.jpg",
+"#U0412#U041f#U0421026.jpg",
+"#U0412#U041f#U0421027.jpg",
+"#U0412#U041f#U0421028.jpg",
+"#U0412#U041f#U0421029.jpg",
+"#U0412#U041f#U0421030.jpg",
+"#U0412#U041f#U0421031.jpg",
+"#U0412#U041f#U0421032.jpg",
+"#U0412#U041f#U0421033.jpg",
+"#U0412#U041f#U0421034.jpg",
+"#U0412#U041f#U0421035.jpg",
+"#U0412#U041f#U0421036.jpg",
+"#U0412#U041f#U0421037.jpg",
+"#U0412#U041f#U0421038.jpg",
+"#U0412#U041f#U0421039.jpg",
+"#U0412#U041f#U0421040.jpg",
+"#U0412#U041f#U0421041.jpg",
+"#U0412#U041f#U0421042.jpg",
+"#U0412#U041f#U0421043.jpg",
+"#U0412#U041f#U0421044.jpg",
+"#U0412#U041f#U0421045.jpg",
+"#U0412#U041f#U0421046.jpg",
+"#U0412#U041f#U0421047.jpg",
+"#U0412#U041f#U0421048.jpg",
+"#U0412#U041f#U0421049.jpg",
+"#U0412#U041f#U0421050.jpg",
+"#U0412#U041f#U0421051.jpg",
+"#U0412#U041f#U0421052.jpg",
+"#U0412#U041f#U0421053.jpg",
+"#U0412#U041f#U0421054.jpg",
+"#U0412#U041f#U0421055.jpg",
+"#U0412#U041f#U0421056.jpg",
+"#U0412#U041f#U0421057.jpg",
+"#U0412#U041f#U0421058.jpg",
+"#U0412#U041f#U0421059.jpg",
+"#U0412#U041f#U0421060.jpg",
+"#U0412#U041f#U0421061.jpg",
+"#U0412#U041f#U0421062.jpg",
+"#U0412#U041f#U0421063.jpg",
+"#U0412#U041f#U0421064.jpg",
+"#U0412#U041f#U0421065.jpg",
+"#U0412#U041f#U0421066.jpg",
+"#U0412#U041f#U0421067.jpg",
+"#U0412#U041f#U0421068.jpg",
+"#U0412#U041f#U0421069.jpg",
+"#U0412#U041f#U0421070.jpg",
+"#U0412#U041f#U0421071.jpg",
+"#U0412#U041f#U0421072.jpg",
+"#U0412#U041f#U0421073.jpg",
+"#U0412#U041f#U0421074.jpg",
+"#U0412#U041f#U0421075.jpg",
+"#U0412#U041f#U0421076.jpg",
+"#U0412#U041f#U0421077.jpg",
+"#U0412#U041f#U0421078.jpg",
+"#U0412#U041f#U0421079.jpg",
+"#U0412#U041f#U0421080.jpg",
+"#U0412#U041f#U0421081.jpg",
+"#U0412#U041f#U0421082.jpg",
+"#U0412#U041f#U0421083.jpg",
+"#U0412#U041f#U0421084.jpg",
+"#U0412#U041f#U0421085.jpg",
+"#U0412#U041f#U0421086.jpg",
+"#U0412#U041f#U0421087.jpg",
+"#U0412#U041f#U0421088.jpg",
+"#U0412#U041f#U0421089.jpg",
+"#U0412#U041f#U0421090.jpg",
+"#U0412#U041f#U0421091.jpg",
+"#U0412#U041f#U0421092.jpg",
+"#U0412#U041f#U0421093.jpg",
+"#U0412#U041f#U0421094.jpg",
+"#U0412#U041f#U0421095.jpg",
+"#U0412#U041f#U0421096.jpg",
+"#U0412#U041f#U0421097.jpg",
+"#U0412#U041f#U0421098.jpg",
+"#U0412#U041f#U0421099.jpg",
+"#U0412#U041f#U0421100.jpg",
+"#U0412#U041f#U0421101.jpg",
+"#U0412#U041f#U0421102.jpg",
+"#U0412#U041f#U0421103.jpg",
+"#U0412#U041f#U0421104.jpg",
+"#U0412#U041f#U0421105.jpg",
+"#U0412#U041f#U0421106.jpg",
+"#U0412#U041f#U0421107.jpg",
+"#U0412#U041f#U0421108.jpg",
+"#U0412#U041f#U0421109.jpg",
+"#U0412#U041f#U0421110.jpg",
+"#U0412#U041f#U0421111.jpg",
+"#U0412#U041f#U0421112.jpg",
+"#U0412#U041f#U0421113.jpg",
+"#U0412#U041f#U0421114.jpg",
+"#U0412#U041f#U0421115.jpg",
+"#U0412#U041f#U0421116.jpg",
+"#U0412#U041f#U0421117.jpg",
+"#U0412#U041f#U0421118.jpg",
+"#U0412#U041f#U0421119.jpg",
+"#U0412#U041f#U0421120.jpg",
+"#U0412#U041f#U0421121.jpg",
+"#U0412#U041f#U0421122.jpg",
+"#U0412#U041f#U0421123.jpg",
+"#U0412#U041f#U0421124.jpg",
+"#U0412#U041f#U0421125.jpg",
+"#U0412#U041f#U0421126.jpg",
+"#U0412#U041f#U0421127.jpg",
+"#U0412#U041f#U0421128.jpg",
+"#U0412#U041f#U0421129.jpg",
+"#U0412#U041f#U0421130.jpg",
+"#U0412#U041f#U0421131.jpg",
+"#U0412#U041f#U0421132.jpg",
+"#U0412#U041f#U0421133.jpg",
+"#U0412#U041f#U0421134.jpg",
+"#U0412#U041f#U0421135.jpg",
+"#U0412#U041f#U0421136.jpg",
+"#U0412#U041f#U0421137.jpg",
+"#U0412#U041f#U0421138.jpg",
+"#U0412#U041f#U0421139.jpg",
+"#U0412#U041f#U0421140.jpg",
+"#U0412#U041f#U0421141.jpg",
+"#U0412#U041f#U0421142.jpg",
+"#U0412#U041f#U0421143.jpg",
+"#U0412#U041f#U0421144.jpg",
+"#U0412#U041f#U0421145.jpg",
+"#U0412#U041f#U0421146.jpg",
+"#U0412#U041f#U0421147.jpg",
+"#U0412#U041f#U0421148.jpg",
+"#U0412#U041f#U0421149.jpg",
+"#U0412#U041f#U0421150.jpg"
+  ];
+  var folder = 'assets/cards/vps/';
+  if (open && gallery) {
+    if (!files.length) {
+      gallery.innerHTML = '<p class="deck-open-note">Картки цієї колоди ще не завантажені.</p>';
+    } else {
+      gallery.innerHTML = files.map(function(name, index) {
+        var num = String(index + 1).padStart(3, '0');
+        var src = folder + encodeURIComponent(name).replace(/%2F/g, '/');
+        return '<article class="deck-card-item">'
+          + '<span class="deck-card-number">' + num + '</span>'
+          + '<button type="button" data-src="' + src + '" data-num="' + num + '">'
+          + '<span class="deck-card-frame"><img src="' + src + '" alt="Карта ' + num + '" loading="lazy" draggable="false"></span>'
+          + '</button></article>';
+      }).join('');
+    }
+  }
+  var modal = document.getElementById('deckModal');
+  var modalImg = document.getElementById('deckModalImg');
+  var modalTitle = document.getElementById('deckModalTitle');
+  function closeModal() { if (modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); } }
+  if (gallery) {
+    gallery.addEventListener('click', function(e) {
+      var btn = e.target.closest('button[data-src]');
+      if (!btn || !modal) return;
+      modalImg.src = btn.getAttribute('data-src');
+      modalImg.alt = 'Карта ' + btn.getAttribute('data-num');
+      modalTitle.textContent = btn.getAttribute('data-num');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    });
+  }
+  if (modal) {
+    modal.addEventListener('click', function(e) { if (e.target === modal || e.target.classList.contains('deck-modal-close')) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  }
+  document.addEventListener('contextmenu', function(e) { if (e.target.closest('.deck-gallery-grid, .deck-modal')) e.preventDefault(); });
+  document.addEventListener('dragstart', function(e) { if (e.target.closest('.deck-gallery-grid, .deck-modal')) e.preventDefault(); });
 })();
 </script>
 <script src="assets/js/config.js"></script>
