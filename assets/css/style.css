@@ -5,13 +5,13 @@
   --paper: #fbf7ef;
   --paper-2: #f7f0e6;
   --ink: #493d31;
-  --muted: #6f6357;
+  --muted: #574a40;
   --line: #d8ccb9;
   --line-strong: #c4b394;
   --olive: #717552;
   --olive-dark: #575c3d;
   --gold: #9f8b60;
-  --branch: #7a4a2b;
+  --branch: #5e3b24;
   --telegram: #229ed9;
   --telegram-dark: #168ac0;
   --viber: #7360f2;
@@ -281,8 +281,7 @@ h1, h2, h3 { color: var(--ink); }
   height: 22px;
   flex: 0 0 54px;
   background: url("../images/title-branch.svg") center / contain no-repeat;
-  opacity: 1;
-  filter: brightness(.72) saturate(1.15);
+  opacity: .92;
 }
 .section-title::after,
 .ornament-title::after,
@@ -310,7 +309,7 @@ h1, h2, h3 { color: var(--ink); }
   transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
 }
 .btn:hover { transform: translateY(-2px); background: var(--olive-dark); box-shadow: var(--shadow-soft); }
-.btn-small { min-height: 36px; padding: 7px 17px; font-size: 12px; }
+.btn-small { min-height: 40px; padding: 9px 20px; font-size: 13px; }
 .btn-outline { background: transparent; color: var(--olive-dark); }
 .btn-outline:hover { color: #fff; }
 
@@ -333,7 +332,7 @@ h1, h2, h3 { color: var(--ink); }
   line-height: 1.05;
 }
 .intro-copy p,
-.benefit p { margin: 0; color: var(--muted); font-size: 12px; }
+.benefit p { margin: 0; color: var(--muted); font-size: 13px; }
 .benefit { text-align: center; border-left: 1px solid var(--line); }
 .benefit svg { width: 36px; height: 36px; margin: 0 auto 7px; color: var(--gold); stroke: currentColor; }
 .benefit h3 { margin: 0 0 4px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; font-weight: 500; }
@@ -355,7 +354,7 @@ h1, h2, h3 { color: var(--ink); }
 .card > img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
 .card-body { display: flex; flex: 1; flex-direction: column; padding: 14px 16px 16px; }
 .card h3 { margin: 0 0 5px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 24px; font-weight: 500; line-height: 1.05; }
-.card p { flex: 1; margin: 0 0 12px; color: var(--muted); font-size: 12px; }
+.card p { flex: 1; margin: 0 0 12px; color: var(--muted); font-size: 13px; }
 .meta,
 .article-date { margin-bottom: 5px; color: var(--gold); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .center-action { margin: 22px 0 0; text-align: center; }
@@ -386,7 +385,7 @@ h1, h2, h3 { color: var(--ink); }
   border-radius: 85px 85px 18px 18px;
 }
 .panel p,
-.panel li { color: var(--muted); font-size: 12px; }
+.panel li { color: var(--muted); font-size: 13px; }
 .panel ul { padding-left: 18px; }
 .home-cert-block { grid-column: 1 / -1; margin-top: 0; }
 .home-cert-label { margin: 0 0 2px; text-align: center; font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; }
@@ -430,7 +429,7 @@ h1, h2, h3 { color: var(--ink); }
 .page-hero p {
   max-width: 760px;
   margin: 7px auto 0;
-  color: #5f5147;
+  color: #4f4339;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 19px;
   line-height: 1.25;
@@ -831,9 +830,9 @@ h1, h2, h3 { color: var(--ink); }
 }
 .deck-choice-intro p {
   margin: 0;
-  color: #493d31;
+  color: #5f5147;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1.25;
 }
 .deck-choice-grid {
@@ -859,8 +858,7 @@ h1, h2, h3 { color: var(--ink); }
   width: 72px;
   height: 142px;
   background: url("../images/side-vine.svg") center / contain no-repeat;
-  opacity: .18;
-  filter: brightness(.75) saturate(1.1);
+  opacity: .10;
   pointer-events: none;
 }
 .deck-choice-card::before {
@@ -919,7 +917,7 @@ h1, h2, h3 { color: var(--ink); }
 .deck-choice-card p {
   flex: 1;
   margin: 0 0 14px;
-  color: #493d31;
+  color: #4f4339;
   text-align: center;
   font-size: 14px;
 }
@@ -927,8 +925,8 @@ h1, h2, h3 { color: var(--ink); }
   display: inline-flex;
   align-self: center;
   justify-content: center;
-  min-height: 42px;
-  padding: 9px 21px;
+  min-height: 40px;
+  padding: 9px 22px;
   border: 1px solid var(--olive);
   border-radius: 999px;
   color: #fff;
@@ -964,13 +962,34 @@ h1, h2, h3 { color: var(--ink); }
 }
 
 
-/* Card pages: stronger readability */
-.cards-page .btn-small {
-  min-height: 42px;
-  padding: 9px 21px;
-  font-size: 14px;
+/* Deck access */
+.deck-closed-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 34px 28px;
+  text-align: center;
+  background: rgba(251, 247, 239, .96);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
 }
-.cards-page .page-hero p,
-.cards-page .deck-choice-card p {
-  color: #493d31;
+.deck-closed-card p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 0 18px;
 }
+.deck-page-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: var(--olive);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+}
+.deck-page-back:hover { background: var(--olive-dark); }

@@ -26,7 +26,7 @@
 <meta content="Оберіть колоду метафоричних карт, яка зараз найбільше відгукується." name="twitter:description"/>
 <meta content="https://keystoself.com.ua/assets/images/mak-cards.jpg" name="twitter:image"/>
 <meta content="OqQjgjxOYaDfPLeTILCCPl3YAwLQMFYE5xxrJE5mUZg" name="google-site-verification"/>
-<link href="assets/css/style.css?v=20260705-cards-readable" rel="stylesheet"/>
+<link href="assets/css/style.css?v=20260705-cards-readable-access" rel="stylesheet"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://keystoself.com.ua/#website","url":"https://keystoself.com.ua/","name":"Ключі до себе","inLanguage":"uk-UA"},{"@type":"ProfessionalService","@id":"https://keystoself.com.ua/#service","name":"Ключі до себе","url":"https://keystoself.com.ua/","image":"https://keystoself.com.ua/assets/images/profile.jpg","telephone":"+380754507590","description":"Психологічна підтримка та робота з метафоричними асоціативними картами.","areaServed":{"@type":"Country","name":"Україна"},"sameAs":["https://t.me/olena_keystoself","https://t.me/keystoself_channel"],"contactPoint":{"@type":"ContactPoint","telephone":"+380754507590","contactType":"customer support","availableLanguage":["uk","ru"]}},{"@type":"Person","@id":"https://keystoself.com.ua/#olena","name":"Олена","jobTitle":"Фахівець з МАК","image":"https://keystoself.com.ua/assets/images/profile.jpg","telephone":"+380754507590","worksFor":{"@id":"https://keystoself.com.ua/#service"},"sameAs":["https://t.me/olena_keystoself","https://t.me/keystoself_channel"]}]}</script>
 </head>
 <body>
@@ -49,12 +49,18 @@
 <button aria-expanded="false" aria-label="Відкрити меню" class="mobile-toggle" type="button"><span></span><span></span><span></span></button>
 </div>
 </header>
-<main class="site-main cards-page">
+<main class="site-main cards-page deck-page" data-deck="moon">
 <section class="page-hero cards-hero">
 <div class="container">
 <h1 class="page-script-title">Лунні картки</h1>
-<p>Сторінка колоди готується. Поки можна повернутися до вибору колод.</p>
-<p><a class="btn btn-small" href="cards.html">← До вибору колод</a></p>
+<div class="deck-closed-card" data-deck-closed>
+<p>Колода зараз закрита для перегляду. Олена відкриє її на час сесії, якщо ви оберете саме цю колоду.</p>
+<a class="deck-page-back" href="cards.html">← До вибору колод</a>
+</div>
+<div data-deck-open hidden>
+<p>Колода відкрита для роботи. Галерея цієї колоди буде додана тут.</p>
+<p><a class="deck-page-back" href="cards.html">← До вибору колод</a></p>
+</div>
 </div>
 </section>
 </main>
@@ -83,6 +89,19 @@
 </div>
 </section>
 <footer class="site-footer">© 2026 «Ключі до себе». Усі права захищені.</footer>
+<script src="assets/cards/access.js"></script>
+<script>
+(function(){
+  var main = document.querySelector('[data-deck]');
+  if (!main || !window.deckAccess) return;
+  var key = main.getAttribute('data-deck');
+  var open = !!window.deckAccess[key];
+  var closedBlock = document.querySelector('[data-deck-closed]');
+  var openBlock = document.querySelector('[data-deck-open]');
+  if (closedBlock) closedBlock.hidden = open;
+  if (openBlock) openBlock.hidden = !open;
+})();
+</script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
