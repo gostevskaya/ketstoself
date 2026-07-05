@@ -281,7 +281,8 @@ h1, h2, h3 { color: var(--ink); }
   height: 22px;
   flex: 0 0 54px;
   background: url("../images/title-branch.svg") center / contain no-repeat;
-  opacity: .92;
+  opacity: 1;
+  filter: brightness(.72) saturate(1.15);
 }
 .section-title::after,
 .ornament-title::after,
@@ -830,9 +831,9 @@ h1, h2, h3 { color: var(--ink); }
 }
 .deck-choice-intro p {
   margin: 0;
-  color: #5f5147;
+  color: #493d31;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 20px;
+  font-size: 21px;
   line-height: 1.25;
 }
 .deck-choice-grid {
@@ -858,7 +859,8 @@ h1, h2, h3 { color: var(--ink); }
   width: 72px;
   height: 142px;
   background: url("../images/side-vine.svg") center / contain no-repeat;
-  opacity: .10;
+  opacity: .18;
+  filter: brightness(.75) saturate(1.1);
   pointer-events: none;
 }
 .deck-choice-card::before {
@@ -917,22 +919,22 @@ h1, h2, h3 { color: var(--ink); }
 .deck-choice-card p {
   flex: 1;
   margin: 0 0 14px;
-  color: #5f5147;
+  color: #493d31;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
 }
 .deck-open {
   display: inline-flex;
   align-self: center;
   justify-content: center;
-  min-height: 34px;
-  padding: 7px 16px;
+  min-height: 42px;
+  padding: 9px 21px;
   border: 1px solid var(--olive);
   border-radius: 999px;
   color: #fff;
   background: var(--olive);
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
 }
 .deck-choice-card:hover .deck-open {
   background: var(--olive-dark);
@@ -959,4 +961,16 @@ h1, h2, h3 { color: var(--ink); }
   .deck-choice-intro p {
     font-size: 17px;
   }
+}
+
+
+/* Card pages: stronger readability */
+.cards-page .btn-small {
+  min-height: 42px;
+  padding: 9px 21px;
+  font-size: 14px;
+}
+.cards-page .page-hero p,
+.cards-page .deck-choice-card p {
+  color: #493d31;
 }
