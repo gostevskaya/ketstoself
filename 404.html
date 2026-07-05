@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Сторінка не знайдена | «Ключі до себе»</title>
+<meta content="noindex, follow" name="robots"/>
+<meta content="#6f7352" name="theme-color"/>
+<link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="site.webmanifest" rel="manifest"/>
+<link href="assets/css/style.css?v=20260704-hero-contact-final" rel="stylesheet"/>
+<style>
+  .not-found-page {
+    min-height: calc(100vh - 180px);
+    display: flex;
+    align-items: center;
+    padding: 72px 0 64px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(145, 122, 83, .08), transparent 32%),
+      radial-gradient(circle at 88% 18%, rgba(111, 115, 82, .08), transparent 30%),
+      var(--cream, #f4ede3);
+  }
+  .not-found-card {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 48px 34px;
+    border: 1px solid rgba(126, 91, 62, .22);
+    border-radius: 28px;
+    background: rgba(255, 250, 244, .82);
+    box-shadow: 0 18px 55px rgba(88, 66, 42, .10);
+    position: relative;
+    overflow: hidden;
+  }
+  .not-found-card::before,
+  .not-found-card::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: url("assets/images/title-branch.svg") center/contain no-repeat;
+    opacity: .32;
+    pointer-events: none;
+  }
+  .not-found-card::before { left: -30px; top: 20px; transform: rotate(-22deg); }
+  .not-found-card::after { right: -30px; bottom: 18px; transform: rotate(158deg); }
+  .not-found-card h1 {
+    margin: 0 0 18px;
+    font-family: var(--font-script, Georgia, serif);
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1;
+    color: var(--brown, #5c3f2e);
+    font-weight: 400;
+  }
+  .not-found-card p {
+    max-width: 620px;
+    margin: 0 auto 24px;
+    color: #5f5147;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .not-found-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+  }
+  .not-found-phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 42px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--olive, #6f7352);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 8px 18px rgba(76, 82, 54, .18);
+  }
+  .not-found-phone:hover { background: var(--olive-dark, #575d3e); }
+  @media (max-width: 640px) {
+    .not-found-page { padding: 42px 0 48px; }
+    .not-found-card { padding: 38px 22px; border-radius: 22px; }
+    .not-found-card p { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-row">
+<a aria-label="Ключі до себе — на головну" class="logo" href="index.html">
+<svg aria-hidden="true" class="logo-mark" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 64 64"><circle cx="21" cy="20" r="7"></circle><circle cx="37" cy="20" r="7"></circle><circle cx="29" cy="11" r="7"></circle><path d="M29 27v27M29 40h14v7h7"></path><path d="M12 50c5-5 8-9 10-15M10 43c5 0 8 2 10 6"></path></svg>
+<span class="logo-name">Ключі до себе</span>
+</a>
+<nav aria-label="Головне меню" class="main-nav"><a href="index.html">Головна</a>
+<a href="about.html">Про мене</a>
+<a href="mak.html">Робота з МАК</a>
+<a href="cards.html">Вибір колоди</a>
+<a href="blog.html">Щоденник</a>
+<a href="index.html#contacts">Контакти</a>
+</nav>
+<a aria-label="Зателефонувати" class="header-phone" data-phone-link="" href="tel:+380754507590">
+<img alt="" aria-hidden="true" src="assets/icons/phone.svg"/><span data-phone="">+38 075 45 075 90</span>
+</a>
+<button aria-expanded="false" aria-label="Відкрити меню" class="mobile-toggle" type="button"><span></span><span></span><span></span></button>
+</div>
+</header>
+<main class="not-found-page">
+  <div class="container">
+    <section class="not-found-card" aria-labelledby="not-found-title">
+      <h1 id="not-found-title">Сторінка загубилася</h1>
+      <p>Можливо, цей шлях більше не веде до потрібної сторінки. Поверніться на головну або зверніться до фахівця з МАК за телефоном.</p>
+      <div class="not-found-actions">
+        <a class="not-found-phone" href="tel:+380754507590">+38 075 45 075 90</a>
+        <a class="btn btn-outline" href="index.html">На головну</a>
+        <a class="btn btn-outline" href="cards.html">Вибір колоди</a>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">© 2026 «Ключі до себе». Усі права захищені.</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
