@@ -3,7 +3,7 @@
 window.deckAccess = {
   vps: false,
   innerJourney: false,
-  monstryky: false,
+  monstryky: true,
   moon: false,
   rid: false,
   tarakany: false
