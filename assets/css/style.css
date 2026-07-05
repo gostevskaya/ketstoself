@@ -281,7 +281,7 @@ h1, h2, h3 { color: var(--ink); }
   height: 22px;
   flex: 0 0 54px;
   background: url("../images/title-branch.svg") center / contain no-repeat;
-  opacity: .82;
+  opacity: .92;
 }
 .section-title::after,
 .ornament-title::after,
@@ -429,7 +429,7 @@ h1, h2, h3 { color: var(--ink); }
 .page-hero p {
   max-width: 760px;
   margin: 7px auto 0;
-  color: var(--muted);
+  color: #5f5147;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 19px;
   line-height: 1.25;
@@ -830,7 +830,7 @@ h1, h2, h3 { color: var(--ink); }
 }
 .deck-choice-intro p {
   margin: 0;
-  color: var(--muted);
+  color: #5f5147;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 20px;
   line-height: 1.25;
@@ -909,12 +909,17 @@ h1, h2, h3 { color: var(--ink); }
   background: #efe6d7;
   box-shadow: 0 4px 12px rgba(76, 56, 36, .08);
 }
+
+.deck-preview-row img.deck-fallback {
+  filter: sepia(.12) saturate(.86);
+}
+
 .deck-choice-card p {
   flex: 1;
   margin: 0 0 14px;
-  color: var(--muted);
+  color: #5f5147;
   text-align: center;
-  font-size: 12px;
+  font-size: 13px;
 }
 .deck-open {
   display: inline-flex;
@@ -924,13 +929,13 @@ h1, h2, h3 { color: var(--ink); }
   padding: 7px 16px;
   border: 1px solid var(--olive);
   border-radius: 999px;
-  color: var(--olive-dark);
-  background: rgba(255, 253, 248, .66);
-  font-size: 12px;
+  color: #fff;
+  background: var(--olive);
+  font-size: 13px;
   font-weight: 500;
 }
 .deck-choice-card:hover .deck-open {
-  background: var(--olive);
+  background: var(--olive-dark);
   color: #fff;
 }
 @media (max-width: 900px) {
