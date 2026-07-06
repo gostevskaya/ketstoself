@@ -6,5 +6,5 @@ window.deckAccess = {
   monstryky: false,
   moon: false,
   rid: false,
-  tarakany: false
+  tarakany: true
 };
