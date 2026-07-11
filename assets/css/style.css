@@ -1211,3 +1211,84 @@ body.cert-preview-open { overflow: hidden; }
   .cert-preview__image { max-height: calc(76vh - 18px); }
   .cert-preview__close { top: -11px; right: -9px; }
 }
+
+/* 2026-07: аккуратное веерное расположение сертификатов без чрезмерного перекрытия */
+.home-cert-fan {
+  width: min(100%, 520px);
+  min-height: 150px;
+  margin-inline: auto;
+  overflow: visible;
+}
+.home-cert-fan .cert {
+  width: 118px;
+}
+.home-cert-fan .cert:nth-child(1) {
+  z-index: 1;
+  transform: translateX(-158%) rotate(-6deg);
+}
+.home-cert-fan .cert:nth-child(2) {
+  z-index: 3;
+  transform: translateX(-50%) translateY(-10px);
+}
+.home-cert-fan .cert:nth-child(3) {
+  z-index: 2;
+  transform: translateX(58%) rotate(6deg);
+}
+
+.cert-fan {
+  width: min(100%, 850px);
+  min-height: 340px;
+  margin: 18px auto 0;
+  overflow: visible;
+}
+.cert-fan .cert {
+  width: min(24vw, 245px);
+  bottom: 24px;
+}
+.cert-fan .cert-1 {
+  z-index: 1;
+  transform: translateX(-132%) rotate(-7deg);
+}
+.cert-fan .cert-2 {
+  z-index: 3;
+  transform: translateX(-50%) translateY(-18px);
+}
+.cert-fan .cert-3 {
+  z-index: 2;
+  transform: translateX(32%) rotate(7deg);
+}
+
+@media (max-width: 720px) {
+  .home-cert-fan {
+    min-height: 132px;
+  }
+  .home-cert-fan .cert {
+    width: min(31vw, 116px);
+  }
+  .home-cert-fan .cert:nth-child(1) {
+    transform: translateX(-148%) rotate(-6deg);
+  }
+  .home-cert-fan .cert:nth-child(2) {
+    transform: translateX(-50%) translateY(-7px);
+  }
+  .home-cert-fan .cert:nth-child(3) {
+    transform: translateX(48%) rotate(6deg);
+  }
+
+  .cert-fan {
+    min-height: 245px;
+  }
+  .cert-fan .cert {
+    width: min(43vw, 180px);
+    padding: 7px;
+  }
+  .cert-fan .cert-1 {
+    transform: translateX(-128%) rotate(-6deg);
+  }
+  .cert-fan .cert-2 {
+    transform: translateX(-50%) translateY(-12px);
+  }
+  .cert-fan .cert-3 {
+    transform: translateX(28%) rotate(6deg);
+  }
+}
