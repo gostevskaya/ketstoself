@@ -1292,3 +1292,110 @@ body.cert-preview-open { overflow: hidden; }
     transform: translateX(28%) rotate(6deg);
   }
 }
+
+/* 2026-07-12: сертификаты — аккуратный веер без перекрытия */
+.home-cert-fan,
+.cert-fan {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+}
+
+.home-cert-fan {
+  width: min(100%, 500px);
+  min-height: 122px;
+  gap: 10px;
+  margin-inline: auto;
+  padding: 10px 8px 4px;
+}
+
+.home-cert-fan .cert,
+.cert-fan .cert {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  margin: 0;
+  flex: 0 0 auto;
+  transform-origin: 50% 100%;
+}
+
+.home-cert-fan .cert {
+  width: min(30%, 132px);
+  padding: 5px;
+}
+
+.home-cert-fan .cert:nth-child(1) {
+  z-index: 1;
+  transform: translateY(7px) rotate(-5deg);
+}
+.home-cert-fan .cert:nth-child(2) {
+  z-index: 2;
+  transform: translateY(-3px);
+}
+.home-cert-fan .cert:nth-child(3) {
+  z-index: 1;
+  transform: translateY(7px) rotate(5deg);
+}
+
+.cert-fan {
+  width: min(100%, 930px);
+  min-height: 255px;
+  gap: clamp(16px, 2.4vw, 30px);
+  margin: 18px auto 0;
+  padding: 26px 18px 12px;
+}
+
+.cert-fan .cert {
+  width: min(29%, 270px);
+  padding: 8px;
+}
+
+.cert-fan .cert-1 {
+  z-index: 1;
+  transform: translateY(15px) rotate(-5deg);
+}
+.cert-fan .cert-2 {
+  z-index: 2;
+  transform: translateY(-8px);
+}
+.cert-fan .cert-3 {
+  z-index: 1;
+  transform: translateY(15px) rotate(5deg);
+}
+
+.home-cert-fan .cert img,
+.cert-fan .cert img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 720px) {
+  .home-cert-fan {
+    min-height: 106px;
+    gap: 5px;
+    padding-inline: 2px;
+  }
+  .home-cert-fan .cert {
+    width: 31%;
+    max-width: 118px;
+  }
+
+  .cert-fan {
+    min-height: 180px;
+    gap: 7px;
+    padding: 18px 2px 8px;
+  }
+  .cert-fan .cert {
+    width: 31%;
+    max-width: 190px;
+    padding: 5px;
+  }
+  .cert-fan .cert-1 { transform: translateY(9px) rotate(-4deg); }
+  .cert-fan .cert-2 { transform: translateY(-4px); }
+  .cert-fan .cert-3 { transform: translateY(9px) rotate(4deg); }
+}
