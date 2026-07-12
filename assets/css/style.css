@@ -1143,3 +1143,71 @@ body, p, li, .deck-choice-intro p, .cards-hero p, .deck-choice-card p { color: #
     gap: 20px 14px;
   }
 }
+
+/* Certificate preview: readable, but intentionally not full-screen */
+.home-cert-fan .cert,
+.cert-fan .cert {
+  cursor: zoom-in;
+}
+
+.cert-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(39, 32, 26, .72);
+  backdrop-filter: blur(3px);
+}
+.cert-preview.open { display: flex; }
+.cert-preview__dialog {
+  position: relative;
+  width: min(82vw, 760px);
+  max-height: 82vh;
+  padding: 12px;
+  background: #fffdf8;
+  border: 1px solid rgba(213, 196, 171, .9);
+  border-radius: 14px;
+  box-shadow: 0 24px 70px rgba(25, 18, 12, .34);
+}
+.cert-preview__image {
+  display: block;
+  width: 100%;
+  max-height: calc(82vh - 24px);
+  object-fit: contain;
+  border-radius: 8px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.cert-preview__close {
+  position: absolute;
+  top: -13px;
+  right: -13px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(213, 196, 171, .95);
+  border-radius: 50%;
+  background: #fffdf8;
+  color: #4f4439;
+  font: 700 24px/1 Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(25, 18, 12, .2);
+}
+.cert-preview__close:hover { background: #f4eadb; }
+body.cert-preview-open { overflow: hidden; }
+
+@media (max-width: 640px) {
+  .cert-preview { padding: 18px; }
+  .cert-preview__dialog {
+    width: min(92vw, 560px);
+    max-height: 76vh;
+    padding: 9px;
+  }
+  .cert-preview__image { max-height: calc(76vh - 18px); }
+  .cert-preview__close { top: -11px; right: -9px; }
+}
